@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #030712;
+  --color-foreground: #f3f4f6;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(6, 182, 212, 0.3) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #030712;
+  color: #f3f4f6;
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Utility for line clamping */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
