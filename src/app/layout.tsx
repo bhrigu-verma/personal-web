@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME || "Developer";
+const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME || "YOUR_USERNAME_HERE";
 
 export const metadata: Metadata = {
   title: `${username} — 3D Portfolio`,

@@ -10,6 +10,7 @@ import { Input, Textarea } from "@/components/ui/input";
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
 
+  // Demo handler — connect to your own API endpoint or email service
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);

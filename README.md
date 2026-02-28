@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 3D Interactive Portfolio
+
+A stunning 3D interactive portfolio website built with Next.js 15, React Three Fiber, and Tailwind CSS. Dynamically pulls all your GitHub work (repos, stats, languages, timeline) and presents it beautifully.
+
+![Hero Section](https://github.com/user-attachments/assets/5178b095-96f4-4ede-8f22-acc8640dacf4)
+
+## Features
+
+- **3D Hero Section** — Particle field, floating orbs, and glow rings with typewriter effect
+- **Project Timeline** — Chronological view of GitHub repos with animated cards
+- **Featured Projects Grid** — Hover-tilt cards with modal details and live GitHub links
+- **GitHub Stats Dashboard** — Total repos, stars, forks, and top languages bar chart
+- **About Me** — Auto-populated from GitHub profile (avatar, bio, location)
+- **Contact Form** — Glassmorphism form with success animation
+- **Loading Screen** — 3D spinning logo animation
+- **Dark Theme** — Neon accents with glassmorphism throughout
+- **Responsive** — Mobile, tablet, and desktop optimized
+- **SEO Ready** — Open Graph meta tags included
+
+## Tech Stack
+
+- **Next.js 15** (App Router) + TypeScript + Tailwind CSS
+- **React Three Fiber** + Three.js + @react-three/drei
+- **Framer Motion** for animations
+- **Lucide React** icons
+- **GitHub REST API** for dynamic data
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/bhrigu-verma/personal-web.git
+cd personal-web
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+```
+
+### Configuration
+
+Edit `.env.local` and set your GitHub username:
+
+```
+NEXT_PUBLIC_GITHUB_USERNAME=your-github-username
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deploy to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Push the repo to GitHub
+2. Import into [Vercel](https://vercel.com)
+3. Add the environment variable `NEXT_PUBLIC_GITHUB_USERNAME` in Vercel settings
+4. Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with SEO metadata
+│   ├── page.tsx            # Server component (fetches GitHub data)
+│   ├── client-page.tsx     # Client component (renders all sections)
+│   └── globals.css         # Global styles
+├── components/
+│   ├── sections/
+│   │   ├── HeroSection.tsx      # 3D hero with particles & typewriter
+│   │   ├── TimelineSection.tsx  # Chronological project timeline
+│   │   ├── ProjectsSection.tsx  # Featured projects grid + modal
+│   │   ├── StatsSection.tsx     # GitHub stats dashboard
+│   │   ├── AboutSection.tsx     # About me section
+│   │   └── ContactSection.tsx   # Contact form
+│   ├── three/
+│   │   ├── ParticleField.tsx    # 3D particles, orbs, glow rings
+│   │   └── SpinningLogo.tsx     # Loading screen 3D logo
+│   ├── ui/
+│   │   ├── button.tsx           # Glassmorphism button component
+│   │   ├── card.tsx             # Glass card component
+│   │   └── input.tsx            # Form input components
+│   ├── Navigation.tsx           # Responsive navbar
+│   ├── LoadingScreen.tsx        # 3D loading screen
+│   └── Footer.tsx               # Footer
+└── lib/
+    ├── github.ts           # GitHub API integration
+    └── utils.ts            # Utility functions (cn)
+```
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT

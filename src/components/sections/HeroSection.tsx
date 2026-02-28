@@ -43,7 +43,7 @@ function useTypewriter(words: string[], typingSpeed = 80, deletingSpeed = 40, pa
 
 export function HeroSection({ user }: { user: GitHubUser | null }) {
   const typed = useTypewriter(titles);
-  const name = user?.name || user?.login || "Developer";
+  const name = user?.name || user?.login || "YOUR_USERNAME_HERE";
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
